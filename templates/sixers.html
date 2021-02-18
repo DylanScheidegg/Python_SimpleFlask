@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sixers</title>
+
+    <style>
+        h1 {text-align: center;}
+        h4 {text-align: center;}
+        div {text-align: center;}
+        img {text-align: center;}
+        a {text-align: center;}
+        body {background-color: rgb(230, 50, 44);}
+        .divColor {
+            margin: 0 auto;
+            background-color: rgb(70, 130, 180);
+            width: 375px;
+            display: inline-block;
+        }
+
+        .nav {
+            overflow: hidden;
+            background-color: rgb(51, 51, 51);
+        }
+
+        .nav a {
+            float: left;
+            color: #f0e9e9;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .nav a:hover {
+            background-color: rgb(221, 221, 221);
+            color: rgb(0, 0, 0);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="nav">
+        <a href="/Sixers/">Sixers</a>
+        <a href="/About/">About</a>
+    </div>
+
+    <h1>Sixers Roster</h1>
+    <div>
+        {% for player in players %}
+            <div class="divColor">
+                <img src={{player.IMGURL}} width="350" height="254">
+                <h4>{{player.FNAME}} {{player.LNAME}}</h4>
+                <div>{{player.POS}} - {{player.NUM}}</div>
+                <div>{{player.COLLEGE}} - {{player.AGE}}</div>
+                <div>{{player.SALARY}}</div>
+                <a href={{player.PROFURL}}>Profile</a>
+                </br>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
